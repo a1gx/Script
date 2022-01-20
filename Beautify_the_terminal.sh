@@ -34,7 +34,7 @@ perl -0pi -e 's/(ZSH_THEME=").*?(")/\1powerlevel10k\/powerlevel10k\2/gs' ~/.zshr
 # 安装与美化tmux
 apt install tmux -y
 
-cat <<EOF > ~/.tmux.conf
+cat <<"EOF" > ~/.tmux.conf
 #设置前缀为Ctrl + a
 set -g prefix C-a
 #解除Ctrl+b 与前缀的对应关系
@@ -102,10 +102,10 @@ EOF
 git clone https://github.com.cnpmjs.org/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
 
-cat <<EOF >> ~/.zshrc
+cat <<"EOF" >> ~/.zshrc
 # tmux 初始化
 tmux has -t "a1gx"
-if [[ \$? == 0 ]];then
+if [[ $? == 0 ]];then
     tmux att -t a1gx
 else
     tmux new -s a1gx
