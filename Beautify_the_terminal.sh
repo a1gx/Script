@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -e
-set -v
+set -x
 
 apt update
 apt install zsh -y
