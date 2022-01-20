@@ -19,7 +19,7 @@ git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions ${ZSH_CUST
 echo "# 激活autojump
 . /usr/share/autojump/autojump.sh" >> ~/.zshrc
 
-perl -0pi -e 's/(plugin.*?=.*?\()(.*?)(\))/\1git
+perl -0pi -e 's/(^plugin.*?=.*?\()(.*?)(\))/\1git
         colored-man-pages
         zsh-syntax-highlighting
         zsh-autosuggestions
