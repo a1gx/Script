@@ -19,7 +19,7 @@ git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions ${ZSH_CUST
 echo "# 激活autojump
 . /usr/share/autojump/autojump.sh" >> ~/.zshrc
 
-perl -0pi -e 's/(plugin.*?=.*?{)(.*?)(})/\1git
+perl -0pi -e 's/(plugin.*?=.*?\()(.*?)(\))/\1git
         colored-man-pages
         zsh-syntax-highlighting
         zsh-autosuggestions
@@ -30,7 +30,6 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 
 perl -0pi -e 's/(ZSH_THEME=").*?(")/\1powerlevel10k\/powerlevel10k\2/gs' ~/.zshrc
 
-source ~/.zshrc
 
 # 安装与美化tmux
 apt install tmux -y
@@ -112,3 +111,5 @@ else
     tmux new -s a1gx
 fi
 EOF
+
+exec zsh -l
