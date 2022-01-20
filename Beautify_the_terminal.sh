@@ -23,7 +23,7 @@ perl -0pi -e 's/(^plugin.*?=.*?\()(.*?)(\))/\1git
         colored-man-pages
         zsh-syntax-highlighting
         zsh-autosuggestions
-        \3/gs' ~/.zshrc
+        \3/gms' ~/.zshrc
 
 # 安装powerlevel10k
 git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -105,7 +105,7 @@ git clone https://github.com.cnpmjs.org/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cat <<EOF >> ~/.zshrc
 # tmux 初始化
 tmux has -t "a1gx"
-if [[ $? == 0 ]];then
+if [[ \$? == 0 ]];then
     tmux att -t a1gx
 else
     tmux new -s a1gx
