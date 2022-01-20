@@ -9,7 +9,7 @@ apt install perl -y
 chsh -s /bin/zsh
 
 # 安装oh-my-zsh
-sh -c "$(curl -fsSL https://raw.staticdn.net/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -fsSL https://raw.staticdn.net/ohmyzsh/ohmyzsh/master/tools/install.sh | perl -pe "s/exec zsh -l//g" | sh
 
 # 安装插件
 apt install autojump -y
