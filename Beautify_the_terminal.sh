@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
-if [[ $# -ge 1 ]];then
+if [ $# -ge 1 ];then
   case $1 in
     -p|--proxy)
       shift
@@ -113,7 +113,7 @@ set -g @plugin 'tmux-plugins/tmux-pain-control'
 run '~/.tmux/plugins/tpm/tpm'
 EOF
 
-git clone ${PROXY}https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone ${PROXY}https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 cat <<"EOF" >> ~/.zshrc
