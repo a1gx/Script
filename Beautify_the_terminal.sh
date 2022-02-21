@@ -5,7 +5,7 @@ if [ $# -ge 1 ];then
   case $1 in
     -p|--proxy)
       shift
-      PROXY="$1"
+      PROXY="$1"/
       shift
       ;;
     *)
