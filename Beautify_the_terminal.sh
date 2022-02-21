@@ -1,6 +1,20 @@
 #!/bin/sh
 
 set -e
+if [[ $# -ge 1 ]];then
+  case $1 in
+    -p|--proxy)
+      shift
+      PROXY="$1"
+      shift
+      ;;
+    *)
+      echo -ne "Parameter Error !"
+      exit 1;
+      ;;
+  esac
+fi
+
 set -x
 
 apt update
@@ -9,12 +23,12 @@ apt install perl -y
 chsh -s /bin/zsh
 
 # 安装oh-my-zsh
-curl -fsSL https://raw.staticdn.net/ohmyzsh/ohmyzsh/master/tools/install.sh | perl -pe "s/exec zsh -l//g" | sh
+curl -fsSL ${PROXY}https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | perl -pe "s/exec zsh -l//g" | sh
 
 # 安装插件
 apt install autojump -y
-git clone https://hub.fastgit.org/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://hub.fastgit.org/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone ${PROXY}https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone ${PROXY}https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 echo "# 激活autojump
 . /usr/share/autojump/autojump.sh" >> ~/.zshrc
@@ -99,7 +113,7 @@ set -g @plugin 'tmux-plugins/tmux-pain-control'
 run '~/.tmux/plugins/tpm/tpm'
 EOF
 
-git clone https://hub.fastgit.org/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone ${PROXY}https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 cat <<"EOF" >> ~/.zshrc
