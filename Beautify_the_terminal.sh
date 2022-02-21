@@ -13,8 +13,8 @@ curl -fsSL https://raw.staticdn.net/ohmyzsh/ohmyzsh/master/tools/install.sh | pe
 
 # 安装插件
 apt install autojump -y
-git clone https://github.com.cnpmjs.org/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://hub.fastgit.org/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://hub.fastgit.org/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 echo "# 激活autojump
 . /usr/share/autojump/autojump.sh" >> ~/.zshrc
@@ -99,7 +99,7 @@ set -g @plugin 'tmux-plugins/tmux-pain-control'
 run '~/.tmux/plugins/tpm/tpm'
 EOF
 
-git clone https://github.com.cnpmjs.org/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://hub.fastgit.org/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 cat <<"EOF" >> ~/.zshrc
