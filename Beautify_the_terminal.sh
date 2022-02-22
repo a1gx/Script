@@ -9,7 +9,7 @@ if [ $# -ge 1 ];then
       shift
       ;;
     *)
-      echo -ne "Parameter Error !"
+      echo -ne "Parameter Error !\n"
       exit 1;
       ;;
   esac
@@ -20,6 +20,8 @@ set -x
 apt update
 apt install zsh -y
 apt install perl -y
+apt install git -y
+apt install curl -y
 chsh -s /bin/zsh
 
 # 安装oh-my-zsh
@@ -34,6 +36,8 @@ echo "# 激活autojump
 . /usr/share/autojump/autojump.sh" >> ~/.zshrc
 
 perl -0pi -e 's/(^plugin.*?=.*?\()(.*?)(\))/\1git
+        docker
+        docker-compose
         colored-man-pages
         zsh-syntax-highlighting
         zsh-autosuggestions
