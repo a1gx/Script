@@ -100,6 +100,10 @@ set-window-option -g window-status-current-format '#[fg=cyan,bold]#I#[fg=blue]:#
 
 # 右下角
 set -g status-right '#{prefix_highlight} #[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]'
+
+#保持tmux窗口名更改后不变
+set-option -g allow-rename off
+
 #插件
 #插件管理器
 set -g @plugin 'tmux-plugins/tpm'
