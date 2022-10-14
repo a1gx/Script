@@ -104,6 +104,9 @@ set -g status-right '#{prefix_highlight} #[fg=green][#[fg=cyan]%Y-%m-%d#[fg=gree
 #保持tmux窗口名更改后不变
 set-option -g allow-rename off
 
+# tmux开启TrueColor，这样可以使nvim在tmux中颜色不会改变
+set-option -ga terminal-overrides ",*256col*:Tc"
+
 #插件
 #插件管理器
 set -g @plugin 'tmux-plugins/tpm'
